@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+data/
+*.ipynb
+.git/
+.vscode/
+training_curves.png
