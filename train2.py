@@ -323,7 +323,7 @@ def main():
         if val_acc > best_val_acc:
             best_val_acc = val_acc
             torch.save(model.state_dict(), 'model2.pth')
-            print(f"  ★ Nouveau meilleur modèle sauvegardé (val_acc={val_acc:.4f})")
+            print(f"  * Nouveau meilleur modele sauvegarde (val_acc={val_acc:.4f})")
         
         scheduler.step(val_loss)  # ReduceLROnPlateau attend la validation loss
         
@@ -333,7 +333,7 @@ def main():
               f"Val Loss: {val_loss:.4f} | Val Acc: {val_acc:.4f} | LR: {current_lr:.6f}")
     
     print("-" * 70)
-    print(f"✓ Entraînement terminé | Meilleure Val Accuracy: {best_val_acc:.4f}")
+    print(f"[OK] Entrainement termine | Meilleure Val Accuracy: {best_val_acc:.4f}")
     
     # Test final
     print("\n" + "=" * 60)
@@ -372,8 +372,8 @@ def main():
     plt.savefig('training_curves_augmented.png', dpi=120, bbox_inches='tight')
     plt.show()
     
-    print("\n✓ Courbes sauvegardées dans 'training_curves_augmented.png'")
-    print("\n📁 Fichier modèle sauvegardé: model2.pth")
+    print("\n[OK] Courbes sauvegardees dans 'training_curves_augmented.png'")
+    print("\n[FILE] Fichier modele sauvegarde: model2.pth")
 
 if __name__ == "__main__":
     main()
