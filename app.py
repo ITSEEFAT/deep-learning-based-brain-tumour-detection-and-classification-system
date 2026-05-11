@@ -201,11 +201,11 @@ def load_model():
         return None, "model2.pth not found — run train.py first"
     try:
         m = BrainTumorCNN(num_classes=4)
-        m.load_state_dict(torch.load('model.pth', map_location='cpu', weights_only=True))
+        m.load_state_dict(torch.load('model2.pth', map_location='cpu', weights_only=True))
         m.eval()
         return m, None
     except Exception as e:
-        return None, f"Failed to load model.pth: {e}"
+        return None, f"Failed to load model2.pth: {e}"
 
 model, model_error = load_model()
 
